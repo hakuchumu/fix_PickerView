@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXy-wt-MCu">
-                                <rect key="frame" x="10" y="244" width="394" height="174"/>
+                                <rect key="frame" x="10" y="244" width="394" height="173.5"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-kf-FjC">
                                 <rect key="frame" x="20" y="437.5" width="374" height="21"/>
@@ -24,22 +24,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-b4-F5C">
+                                <rect key="frame" x="20" y="488.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-lJ-W5b">
+                                <rect key="frame" x="20" y="539.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="OEb-b4-F5C" firstAttribute="top" secondItem="pfV-kf-FjC" secondAttribute="bottom" constant="30" id="5tr-rY-7wE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pfV-kf-FjC" secondAttribute="trailing" constant="20" id="Cf1-Xf-jXy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OEb-b4-F5C" secondAttribute="trailing" constant="20" id="DXp-1L-RhF"/>
+                            <constraint firstItem="OEb-b4-F5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IjP-rz-3Mt"/>
                             <constraint firstItem="pfV-kf-FjC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kxv-kI-c8k"/>
                             <constraint firstItem="pfV-kf-FjC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Qcj-QP-2O3"/>
                             <constraint firstItem="FXy-wt-MCu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="U20-fW-EXm"/>
+                            <constraint firstItem="2g3-lJ-W5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hx6-eC-7gr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FXy-wt-MCu" secondAttribute="trailing" constant="10" id="la5-ps-SfJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2g3-lJ-W5b" secondAttribute="trailing" constant="20" id="nSM-xP-gGG"/>
+                            <constraint firstItem="2g3-lJ-W5b" firstAttribute="top" secondItem="OEb-b4-F5C" secondAttribute="bottom" constant="30" id="r67-3Z-DMS"/>
                             <constraint firstItem="pfV-kf-FjC" firstAttribute="top" secondItem="FXy-wt-MCu" secondAttribute="bottom" constant="20" id="sG8-df-qMg"/>
                             <constraint firstItem="FXy-wt-MCu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vf2-T3-gQF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="playlist" destination="FXy-wt-MCu" id="mgd-xE-hsP"/>
-                        <outlet property="selectedTitle" destination="pfV-kf-FjC" id="CiT-4M-lZZ"/>
+                        <outlet property="kanaList" destination="FXy-wt-MCu" id="xRs-HX-lrT"/>
+                        <outlet property="labelA" destination="pfV-kf-FjC" id="1rU-86-dZo"/>
+                        <outlet property="labelKA" destination="OEb-b4-F5C" id="VbI-0w-FgA"/>
+                        <outlet property="labelSA" destination="2g3-lJ-W5b" id="dyA-rc-kAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,30 +14,46 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
-    @IBOutlet weak var playlist: UIPickerView!
+
+    @IBOutlet weak var kanaList: UIPickerView!
     
-    @IBOutlet weak var selectedTitle: UILabel!
+    @IBOutlet weak var labelA: UILabel!
     
+    @IBOutlet weak var labelKA: UILabel!
     
-    let classicSongs = ["caprice No.24", "Carnival of Venice", "Liebesfreud", "The last rose of summer", "The four seasons,RV297"]
+    @IBOutlet weak var labelSA: UILabel!
     
+    let kana = [["あ", "い", "う", "え", "お"], ["か", "き", "く", "け", "こ"], ["さ", "し", "す", "せ", "そ"]]
+    
+    //PickerViewの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return kana.count
     }
     
+    //PickerViewの行数を返す
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let songTitle = classicSongs[component]
-        return songTitle.count
+        let kanaCountRows = kana[component]
+        return kanaCountRows.count
     }
     
+    //行の項目名を返す
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let item = classicSongs[row]
+        let item = kana[component][row]
         return item
     }
     
+    //ドラムが回転して項目が選ばれた
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-        selectedTitle.text = self.pickerView(pickerView, titleForRow: row, forComponent: 0)
+        //現在の選択行
+        let rowA = pickerView.selectedRow(inComponent: 0)
+        let rowKA = pickerView.selectedRow(inComponent: 1)
+        let rowSA = pickerView.selectedRow(inComponent: 2)
+        
+        //行の取得と列の取得追加せなあかんっぽい
+        labelA.text = self.pickerView(pickerView, titleForRow: rowA, forComponent: 0)
+        labelKA.text = self.pickerView(pickerView, titleForRow: rowKA, forComponent: 1)
+        labelSA.text = self.pickerView(pickerView, titleForRow: rowSA, forComponent: 2)
+        
         
     }
     
@@ -45,8 +61,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        playlist.delegate = self
-        playlist.dataSource = self
+        kanaList.delegate = self
+        kanaList.dataSource = self
     }
 
 
