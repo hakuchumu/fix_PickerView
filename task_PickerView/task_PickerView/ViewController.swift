@@ -12,8 +12,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-
+class ViewController: UIViewController{
 
     @IBOutlet weak var kanaList: UIPickerView!
     
@@ -25,7 +24,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     let kana = [["あ", "い", "う", "え", "お"], ["か", "き", "く", "け", "こ"], ["さ", "し", "す", "せ", "そ"]]
     
-    //PickerViewの列の数
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        kanaList.delegate = self
+        kanaList.dataSource = self
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    //PickerViewの列数を返す
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return kana.count
     }
@@ -44,28 +54,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //ドラムが回転して項目が選ばれた
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         //現在の選択行
         let rowA = pickerView.selectedRow(inComponent: 0)
         let rowKA = pickerView.selectedRow(inComponent: 1)
         let rowSA = pickerView.selectedRow(inComponent: 2)
         
-        //行の取得と列の取得追加せなあかんっぽい
+        //それぞれのラベルへ項目の値を貼り付け
         labelA.text = self.pickerView(pickerView, titleForRow: rowA, forComponent: 0)
         labelKA.text = self.pickerView(pickerView, titleForRow: rowKA, forComponent: 1)
         labelSA.text = self.pickerView(pickerView, titleForRow: rowSA, forComponent: 2)
         
-        
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        kanaList.delegate = self
-        kanaList.dataSource = self
-    }
-
-
 }
 
 
