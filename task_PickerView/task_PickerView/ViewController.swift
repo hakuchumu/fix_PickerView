@@ -10,6 +10,8 @@
 //①ViewControllerにPickerViewとlabelを用意。
 //②PickerViewで選択された内容をラベルに反映する。
 
+//push時にmargeも一緒にされるのか確認
+
 import UIKit
 
 class ViewController: UIViewController{
