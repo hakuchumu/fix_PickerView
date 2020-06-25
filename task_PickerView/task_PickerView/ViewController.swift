@@ -11,7 +11,7 @@
 //②PickerViewで選択された内容をラベルに反映する。
 
 //push時にmargeも一緒にされるのか確認
-
+//branch作成後の確認
 import UIKit
 
 class ViewController: UIViewController{
